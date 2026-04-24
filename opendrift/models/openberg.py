@@ -450,7 +450,7 @@ class OpenBerg(OpenDriftSimulation):
                 },
     	    'drift:sea_ice_lockin':{
                     'type': 'float',
-                    'default': 0.9,
+                    'default': 0.7,
                     'min':0.0,
                     'max':1.0,
                     'units':[1],
