@@ -555,7 +555,7 @@ class OpenBerg(OpenDriftSimulation):
             #addition to V0: iceberg moves with sea ice>0.15 if no V0 available (because no wind, current or stokes input) and sea ice drag on
         if np.logical_or(np.any(V0==0),np.any(np.isnan(V0))) and sea_ice_drag==True: # If no proper V0 (because no wind, current or stokes input) and sea ice drag on
             V0[:, sea_ice_conc >= 0.15] = sea_ice_vel[:, sea_ice_conc >= 0.15]  # With this criterium, the iceberg moves with the sea ice
-            print('initial timestep velocity from ci>15%')
+            logger.info('Initial timestep velocity from CI>15%')
             #addition to V0: iceberg moves with sea ice>0.9 if sea ice drag on
         if sea_ice_drag==True: V0[:, sea_ice_conc >= switch_ci] = sea_ice_vel[:, sea_ice_conc >= switch_ci]  # With this criterium, the iceberg moves with the sea ice
         
